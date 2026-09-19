@@ -1,0 +1,21 @@
+resource_id,resource_type,region,cpu_utilization,memory_utilization,hours_used,monthly_cost,ml_anomaly,recommendation,estimated_savings
+EC2-001,EC2,Mumbai,8,12,45,120,1,Stop or terminate resource,96.0
+EC2-002,EC2,Mumbai,72,68,720,450,1,No optimization required,0.0
+EC2-003,EC2,Singapore,18,22,210,180,1,Consider downsizing resource,72.0
+EC2-004,EC2,Singapore,91,87,720,620,-1,Review capacity and performance,0.0
+EC2-005,EC2,Virginia,25,28,350,300,1,Consider downsizing resource,120.0
+EC2-006,EC2,Virginia,67,61,680,480,1,No optimization required,0.0
+EC2-007,EC2,Mumbai,5,8,30,90,-1,Stop or terminate resource,72.0
+EC2-008,EC2,Singapore,32,35,480,350,1,No optimization required,0.0
+EC2-009,EC2,Virginia,14,18,160,160,1,Consider downsizing resource,64.0
+EC2-010,EC2,Mumbai,82,76,700,520,1,No optimization required,0.0
+DB-001,Database,Mumbai,45,52,720,600,1,No optimization required,0.0
+DB-002,Database,Singapore,78,81,710,850,-1,Review capacity and performance,0.0
+DB-003,Database,Virginia,12,15,180,250,1,Consider downsizing resource,100.0
+DB-004,Database,Mumbai,63,59,650,700,1,No optimization required,0.0
+DB-005,Database,Virginia,22,25,240,320,1,Consider downsizing resource,128.0
+S3-001,Storage,Mumbai,30,35,720,150,1,No optimization required,0.0
+S3-002,Storage,Singapore,65,60,700,280,1,No optimization required,0.0
+S3-003,Storage,Virginia,15,20,300,100,1,Consider downsizing resource,40.0
+S3-004,Storage,Mumbai,48,45,600,220,1,No optimization required,0.0
+S3-005,Storage,Singapore,72,69,680,310,1,No optimization required,0.0
