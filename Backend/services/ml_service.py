@@ -23,4 +23,6 @@ def detect_anomalies(resources):
 
     df["ml_anomaly"] = model.fit_predict(features)
 
+    df = df.astype(object).where(pd.notna(df), None)
+
     return df.to_dict(orient="records")
