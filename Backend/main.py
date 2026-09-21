@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 import pandas as pd
-
+from routes.summary_routes import router as summary_router
 from routes.resource_routes import router as resource_router
-
+from routes.recommendation_routes import router as recommendation_router
+from routes.optimization_routes import router as optimization_router
+from routes.ml_routes import router as ml_router
 
 app = FastAPI()
 
@@ -10,7 +12,10 @@ CSV_PATH = "data/cloud_optimization_results.csv"
 
 # Include resource routes
 app.include_router(resource_router)
-
+app.include_router(summary_router)
+app.include_router(recommendation_router)
+app.include_router(optimization_router)
+app.include_router(ml_router)
 
 @app.get("/")
 def root():
@@ -19,40 +24,6 @@ def root():
     }
 
 
-@app.get("/summary")
-def get_summary():
-
-    df = pd.read_csv(CSV_PATH)
-
-    return {
-        "total_resources": len(df),
-
-        "total_monthly_cost": float(
-            df["monthly_cost"].sum()
-        ),
-
-        "idle_resources": int(
-            (
-                (df["cpu_utilization"] < 10) &
-                (df["memory_utilization"] < 20)
-            ).sum()
-        ),
-
-        "underutilized_resources": int(
-            (
-                (df["cpu_utilization"] < 30) |
-                (df["memory_utilization"] < 30)
-            ).sum()
-        ),
-
-        "ml_anomalies": int(
-            (df["ml_anomaly"] == -1).sum()
-        ),
-
-        "estimated_potential_savings": float(
-            df["estimated_savings"].sum()
-        )
-    }
 
 
 @app.get("/recommendations")

@@ -19,3 +19,6 @@ def create_resource(resource: Resource):
 @router.get("/resources")
 def get_resources():
     return get_all_resources()
+
+
+
